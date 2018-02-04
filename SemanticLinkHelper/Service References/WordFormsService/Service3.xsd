@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ulif.org.ua/services/lib5" elementFormDefault="qualified" targetNamespace="http://ulif.org.ua/services/lib5" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/gldescript" />
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd3" namespace="http://ulif.org.ua/lib5/" />
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/fdict" />
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:element name="SupplyPageOfData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lowerPageBoundary" type="xs:int" />
+        <xs:element minOccurs="0" name="rowsPerPage" type="xs:int" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/gldescript" minOccurs="0" name="dicFlag" type="q1:gldesc.dic" />
+        <xs:element minOccurs="0" name="singledict" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplyPageOfDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://ulif.org.ua/lib5/" minOccurs="0" name="SupplyPageOfDataResult" nillable="true" type="q2:ArrayOfListElement" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReestrGetID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="i" type="xs:int" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/gldescript" minOccurs="0" name="dict" type="q3:gldesc.dic" />
+        <xs:element minOccurs="0" name="singledict" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReestrGetIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReestrGetIDResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReestrGetLen">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/gldescript" minOccurs="0" name="dict" type="q4:gldesc.dic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReestrGetLenResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReestrGetLenResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReestrGetWord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReestrGetWordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ReestrGetWordResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateWPar">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="word" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="fstyle" nillable="true" type="xs:string" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/gldescript" minOccurs="0" name="dtype" type="q5:gldesc.dic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateWParResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateWParResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateWPar2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="word" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="fstyle" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/gldescript" minOccurs="0" name="dtype" type="q6:gldesc.dic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateWPar2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateWPar2Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateWPar3">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="word" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="fstyle" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/gldescript" minOccurs="0" name="dtype" type="q7:gldesc.dic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GenerateWPar3Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GenerateWPar3Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="w" nillable="true" type="xs:string" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/gldescript" minOccurs="0" name="dict" type="q8:gldesc.dic" />
+        <xs:element minOccurs="0" name="singledict" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchWordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchWordResult" type="xs:int" />
+        <xs:element minOccurs="0" name="r" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDicWord">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="w" nillable="true" type="xs:string" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/gldescript" minOccurs="0" name="d" type="q9:gldesc.dic" />
+        <xs:element minOccurs="0" name="singledict" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchDicWordResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchDicWordResult" type="xs:int" />
+        <xs:element minOccurs="0" name="r" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchOrderNum">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/gldescript" minOccurs="0" name="dict" type="q10:gldesc.dic" />
+        <xs:element minOccurs="0" name="singledict" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchOrderNumResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchOrderNumResult" type="xs:int" />
+        <xs:element minOccurs="0" name="res" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="existdict">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uid" type="xs:int" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/gldescript" minOccurs="0" name="d" type="q11:gldesc.dic" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="existdictResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="existdictResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="existdicts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="existdictsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="s" type="xs:boolean" />
+        <xs:element minOccurs="0" name="f" type="xs:boolean" />
+        <xs:element minOccurs="0" name="a" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DictPrepare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uid" type="xs:int" />
+        <xs:element minOccurs="0" name="art" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fstyle" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/gldescript" minOccurs="0" name="d" type="q12:gldesc.dic" />
+        <xs:element minOccurs="0" name="singledict" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DictPrepareResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DictPrepareResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DictPrepare2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uid" type="xs:int" />
+        <xs:element minOccurs="0" name="art" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="fstyle" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/gldescript" minOccurs="0" name="d" type="q13:gldesc.dic" />
+        <xs:element minOccurs="0" name="singledict" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DictPrepare2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DictPrepare2Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="phrasPrepare">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="phrasPrepareResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="phrasPrepareResult" nillable="true" type="xs:base64Binary" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/fdict" minOccurs="0" name="phras" nillable="true" type="q14:ArrayOfphrasdict.phraseology" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpharticle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aid" type="xs:int" />
+        <xs:element minOccurs="0" name="l" type="xs:byte" />
+        <xs:element minOccurs="0" name="fstyle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="singledict" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpharticleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getpharticleResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpharticle2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="aid" type="xs:int" />
+        <xs:element minOccurs="0" name="l" type="xs:byte" />
+        <xs:element minOccurs="0" name="fstyle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="singledict" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getpharticle2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getpharticle2Result" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="phcmp">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="word1" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="word2" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="phcmpResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="phcmpResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAppName">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAppNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetAppNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="checkver">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="sver" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="checkverResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="checkverResult" type="xs:boolean" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="a" nillable="true" type="q15:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="processmorph">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="processmorphResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://ulif.org.ua/lib5/" minOccurs="0" name="processmorphResult" nillable="true" type="q16:ArrayOfmorphstr" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getcwf">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="w" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getcwfResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getcwfResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="processaccent">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="processaccentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="processaccentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="processtranscr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="processtranscrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="processtranscrResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllPart">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inputWord" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllPartResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getAllPartResult" type="xs:boolean" />
+        <xs:element xmlns:q17="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="res" nillable="true" type="q17:ArrayOfunsignedByte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllFirstWFormsWithParts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inputWord" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllFirstWFormsWithPartsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://ulif.org.ua/lib5/" minOccurs="0" name="getAllFirstWFormsWithPartsResult" nillable="true" type="q18:ArrayOfWordUniAndPartAndOmon" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getsemcomm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="uni" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getsemcommResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getsemcommResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="f6" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="f7" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTypeWords">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="inputWords" nillable="true" type="q19:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTypeWordsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://ulif.org.ua/lib5/" minOccurs="0" name="getTypeWordsResult" nillable="true" type="q20:ArrayOftypeWord" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGramParams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idpart" type="xs:int" />
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="grs" nillable="true" type="q21:ArrayOfunsignedShort" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGramParamsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="getGramParamsResult" nillable="true" type="q22:ArrayOfstring" />
+        <xs:element minOccurs="0" name="partName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPartIdAssotiations">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPartIdAssotiationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="partids" nillable="true" type="q23:ArrayOfint" />
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="commPartIds" nillable="true" type="q24:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllPartGramInfo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllPartGramInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://ulif.org.ua/lib5/" minOccurs="0" name="getAllPartGramInfoResult" nillable="true" type="q25:ArrayOfpartgramInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCommonPartsInfo">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCommonPartsInfoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://ulif.org.ua/lib5/" minOccurs="0" name="getCommonPartsInfoResult" nillable="true" type="q26:ArrayOfCommonPartsInfo" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

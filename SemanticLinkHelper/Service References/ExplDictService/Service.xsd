@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/VLLStaffDB" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VLLStaffDB" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/IExplPerCall/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfranges">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ranges" type="tns:ranges" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfranges" nillable="true" type="tns:ArrayOfranges" />
+  <xs:complexType name="ranges">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lower" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      <xs:element minOccurs="0" name="showall" type="xs:boolean" />
+      <xs:element minOccurs="0" name="sql" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="upper" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="username" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ranges" nillable="true" type="tns:ranges" />
+</xs:schema>

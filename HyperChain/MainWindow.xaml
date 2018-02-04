@@ -1,0 +1,91 @@
+﻿<Window x:Class="HyperChain.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        WindowStartupLocation="CenterScreen"
+        Title="Побудова гіперланцюгів" Height="552" Width="1315" Loaded="Window_Loaded">
+    <Grid>
+        <Grid Name="grid4" MinWidth="700" MinHeight="450" HorizontalAlignment="Left" Width="769">           
+            <GroupBox Header="Вибір слова" HorizontalAlignment="Left" Name="groupBox3" Width="763">
+                <Grid Height="486" HorizontalAlignment="Left" Name="grid7" VerticalAlignment="Top" Width="751">
+                    <!--Label Content="Введення слова" Height="28" HorizontalAlignment="Left" Margin="1,1,0,0" Name="label1" VerticalAlignment="Top" Width="169" /-->
+                    <Button Content="Знайти" Height="23" HorizontalAlignment="Left" Margin="5,10,0,0" Name="btnSearchWord" VerticalAlignment="Top" Width="50" Click="btnSearchWord_Click" />
+                    <ComboBox Height="23" HorizontalAlignment="Left" Margin="70,10,0,0" Name="cmbWord" VerticalAlignment="Top" Width="186" IsReadOnly="False" IsEditable="True" Grid.ColumnSpan="2" />
+                    <ListView Name="lvRegisrtyWords" ScrollViewer.ScrollChanged="lvRegisrtyWords_ScrollChanged" SelectionMode="Single" ItemsSource="{Binding Path=ListWords}" Margin="6,39,6,6" MouseRightButtonUp="ShowContext" MouseLeftButtonDown="ShowContext">
+                        <ListView.View >
+                            
+                            <GridView >
+
+                                <GridViewColumn Header="Реєстрове слово" Width="150" DisplayMemberBinding="{Binding ParentWord.Word}" />
+                                <GridViewColumn Header="Омонім" Width="60" DisplayMemberBinding="{Binding ParentWord.Homonym}" />
+                                <GridViewColumn Header="Статус" Width="110" DisplayMemberBinding="{Binding ParentWord.Status}" />
+                                <GridViewColumn Header="Редаговано" Width="120" DisplayMemberBinding="{Binding ParentWord.Reviewed}" />
+                                <GridViewColumn Header="Нащадків" Width="70" DisplayMemberBinding="{Binding Children.Count}" >
+                                </GridViewColumn>
+                                <GridViewColumn Header="Ігнорованих" Width="80" DisplayMemberBinding="{Binding Ignored}">
+                                    <!--GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock>
+                                                <TextBlock.Text >
+                                                    <Binding Path="">
+                                                    </Binding>
+                                                </TextBlock.Text></TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate-->
+
+                                </GridViewColumn>
+                                <GridViewColumn Header="Невизначених" Width="90" DisplayMemberBinding="{Binding Tentative}">
+                                    <!--GridViewColumn.CellTemplate>
+
+                                        <DataTemplate>
+                                            <TextBlock>
+                                <TextBlock.Text >
+                                    <MultiBinding StringFormat="{}{0}/{1}">
+                                        <Binding Path="CurDeep" />
+                                        <Binding Path="MaxDeep" />
+                                    </MultiBinding>
+                                </TextBlock.Text></TextBlock>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate-->
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </GroupBox>
+        </Grid>     
+
+        <Grid Name="grid2" MinHeight="450" MinWidth="270" HorizontalAlignment="Right" Width="273">
+            <GroupBox Header="Параметри пошуку" Margin="0,5,0,0" Name="groupBox1" Height="217" VerticalAlignment="Top">
+                <Grid>
+                    <Label Content="Глибина пошуку" Height="19" HorizontalAlignment="Left" Margin="67,19,0,0" Name="label2" VerticalAlignment="Top" Width="107" Padding="0" />
+                    <xctk:IntegerUpDown Height="23" HorizontalAlignment="Left" Margin="67,48,0,0" Name="EdDeepSearch" DefaultValue="1" Text="1" Visibility="Visible" VerticalAlignment="Top" Width="53" Minimum="1" Maximum="6" />
+                    <CheckBox Content="Примусовий пошук" Height="16" HorizontalAlignment="Left" Margin="67,86,0,0" Name="ForceSearch" VerticalAlignment="Top" Width="134" />
+                    <Button Content="Розпочати пошук" Height="23" HorizontalAlignment="Left" Margin="52,137,0,0" Name="btnSearchHyper" VerticalAlignment="Top" Width="160" Click="btnSearchHyper_Click" />
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="Параметри виводу гіперланцюгів" Margin="0,0,0,5" Name="groupBox2" Height="280" VerticalAlignment="Bottom">
+                <Grid Height="253">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="126*" />
+                        <ColumnDefinition Width="135*" />
+                    </Grid.ColumnDefinitions>
+                    <!--CheckBox Content="За базою гіперланцюгів" Height="16" HorizontalAlignment="Left" Margin="44,131,0,0" Name="DBSearch" VerticalAlignment="Top" Grid.ColumnSpan="2" />
+                    <CheckBox Content="За тлумачним словником" Height="16" HorizontalAlignment="Left" Margin="44,158,0,0" Name="ExplSearch" VerticalAlignment="Top" Grid.ColumnSpan="2" /-->
+                    <Button Content="Вивести гіперланцюги" Height="23" HorizontalAlignment="Left" Margin="52,142,0,0" Name="btnShowHyper" VerticalAlignment="Top" Width="160" Click="btnShowHyper_Click" Grid.ColumnSpan="2" />
+                    <Label Content="Глибина побудови" Height="19" HorizontalAlignment="Left" Margin="67,52,0,0" Name="label1" Padding="0" VerticalAlignment="Top" Width="107" Grid.ColumnSpan="2" />
+                    <xctk:IntegerUpDown Height="23" HorizontalAlignment="Left" Margin="67,81,0,0" Maximum="6" Minimum="1" Text="1" Name="edDeepHyper" DefaultValue="1" VerticalAlignment="Top" Width="53" />
+                </Grid>
+            </GroupBox>
+        </Grid>
+        <ListView Margin="773,56,279,10" Name="lvRuns" SelectionMode="Single" ItemsSource="{Binding Path=ListRuns}" MouseRightButtonUp="ShowContextRuns"  MouseLeftButtonDown="ShowContextRuns" DataContext="{Binding}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Реєстрове слово" Width="130" DisplayMemberBinding="{Binding WordLink.ParentWord.Word}" />
+                    <GridViewColumn Header="Статус" Width="90" DisplayMemberBinding="{Binding WordLink.ParentWord.Status}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Слова, що обробляються" Height="28" HorizontalAlignment="Left" Margin="773,22,0,0" Name="label3" VerticalAlignment="Top" Width="168" />
+    </Grid>
+</Window>

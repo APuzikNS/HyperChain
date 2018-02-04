@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/VLLStaffDB.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/VLLStaffDB.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/ICommonPerCall/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfDBCONF">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DBCONF" nillable="true" type="tns:DBCONF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDBCONF" nillable="true" type="tns:ArrayOfDBCONF" />
+  <xs:complexType name="DBCONF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LS_CONFIG" nillable="true" type="tns:ArrayOfLS_CONFIG" />
+      <xs:element minOccurs="0" name="dbname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="security" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="DBCONF" nillable="true" type="tns:DBCONF" />
+  <xs:complexType name="ArrayOfLS_CONFIG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LS_CONFIG" nillable="true" type="tns:LS_CONFIG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLS_CONFIG" nillable="true" type="tns:ArrayOfLS_CONFIG" />
+  <xs:complexType name="LS_CONFIG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ALLANG" nillable="true" type="tns:ALLANG" />
+      <xs:element minOccurs="0" name="DBCONF" nillable="true" type="tns:DBCONF" />
+      <xs:element minOccurs="0" name="LS_TYPE1" nillable="true" type="tns:LS_TYPE" />
+      <xs:element minOccurs="0" name="SYSTEM" nillable="true" type="tns:SYSTEM" />
+      <xs:element minOccurs="0" name="USERS_LOG" nillable="true" type="tns:ArrayOfUSERS_LOG" />
+      <xs:element minOccurs="0" name="USERS_RANGES" nillable="true" type="tns:ArrayOfUSERS_RANGES" />
+      <xs:element minOccurs="0" name="db_id" type="xs:int" />
+      <xs:element minOccurs="0" name="dbname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lang" type="xs:int" />
+      <xs:element minOccurs="0" name="ls_type" type="xs:int" />
+      <xs:element minOccurs="0" name="prefix" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="servername" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="LS_CONFIG" nillable="true" type="tns:LS_CONFIG" />
+  <xs:complexType name="ALLANG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LS_CONFIG" nillable="true" type="tns:ArrayOfLS_CONFIG" />
+      <xs:element minOccurs="0" name="full_lang" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_lang" type="xs:int" />
+      <xs:element minOccurs="0" name="short_lang" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ALLANG" nillable="true" type="tns:ALLANG" />
+  <xs:complexType name="LS_TYPE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LS_CONFIG" nillable="true" type="tns:ArrayOfLS_CONFIG" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="ls_name" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="LS_TYPE" nillable="true" type="tns:LS_TYPE" />
+  <xs:complexType name="SYSTEM">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACTIVE" type="xs:short" />
+      <xs:element minOccurs="0" name="DESCRIPTION" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LS_CONFIG" nillable="true" type="tns:LS_CONFIG" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="OPTION" nillable="true" type="tns:OPTION" />
+      <xs:element minOccurs="0" name="RIGHTS" nillable="true" type="tns:ArrayOfRIGHT" />
+      <xs:element minOccurs="0" name="SID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="TIMEMARKER" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="URI" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="SYSTEM" nillable="true" type="tns:SYSTEM" />
+  <xs:complexType name="OPTION">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="STATUS" type="xs:short" />
+      <xs:element minOccurs="0" name="SYSTEMS" nillable="true" type="tns:ArrayOfSYSTEM" />
+      <xs:element minOccurs="0" name="VAL_B" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="VAL_I" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="VAL_S" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="OPTION" nillable="true" type="tns:OPTION" />
+  <xs:complexType name="ArrayOfSYSTEM">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SYSTEM" nillable="true" type="tns:SYSTEM" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSYSTEM" nillable="true" type="tns:ArrayOfSYSTEM" />
+  <xs:complexType name="ArrayOfRIGHT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RIGHT" nillable="true" type="tns:RIGHT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRIGHT" nillable="true" type="tns:ArrayOfRIGHT" />
+  <xs:complexType name="RIGHT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GROUPS_RIGHTS" nillable="true" type="tns:ArrayOfGROUPS_RIGHTS" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SYSTEM" type="xs:int" />
+      <xs:element minOccurs="0" name="SYSTEM1" nillable="true" type="tns:SYSTEM" />
+      <xs:element minOccurs="0" name="TIMEMARKER" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="USERS_RIGHTS" nillable="true" type="tns:ArrayOfUSERS_RIGHTS" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="RIGHT" nillable="true" type="tns:RIGHT" />
+  <xs:complexType name="ArrayOfGROUPS_RIGHTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GROUPS_RIGHTS" nillable="true" type="tns:GROUPS_RIGHTS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGROUPS_RIGHTS" nillable="true" type="tns:ArrayOfGROUPS_RIGHTS" />
+  <xs:complexType name="GROUPS_RIGHTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EXPIRED" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="GROUP" nillable="true" type="tns:GROUP" />
+      <xs:element minOccurs="0" name="GROUP_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IS_ACTIVE" type="xs:short" />
+      <xs:element minOccurs="0" name="RIGHT" nillable="true" type="tns:RIGHT" />
+      <xs:element minOccurs="0" name="RIGHT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="TIMEMARKER" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="XML_RIGHT" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="GROUPS_RIGHTS" nillable="true" type="tns:GROUPS_RIGHTS" />
+  <xs:complexType name="GROUP">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GROUPS_RIGHTS" nillable="true" type="tns:ArrayOfGROUPS_RIGHTS" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIMEMARKER" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="USERS_GROUPS" nillable="true" type="tns:ArrayOfUSERS_GROUPS" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="GROUP" nillable="true" type="tns:GROUP" />
+  <xs:complexType name="ArrayOfUSERS_GROUPS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="USERS_GROUPS" nillable="true" type="tns:USERS_GROUPS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUSERS_GROUPS" nillable="true" type="tns:ArrayOfUSERS_GROUPS" />
+  <xs:complexType name="USERS_GROUPS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GROUP" nillable="true" type="tns:GROUP" />
+      <xs:element minOccurs="0" name="GROUP_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PERSONSHISTORY" nillable="true" type="tns:PERSONSHISTORY" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="USERS_GROUPS" nillable="true" type="tns:USERS_GROUPS" />
+  <xs:complexType name="PERSONSHISTORY">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACTIVE" type="xs:short" />
+      <xs:element minOccurs="0" name="ADDRESS" nillable="true" type="tns:ADDRESS" />
+      <xs:element minOccurs="0" name="ADDRESS_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ANOTHER_EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ARRIVALDATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="COUNTRY_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DEPARTMENT" nillable="true" type="tns:DEPARTMENT" />
+      <xs:element minOccurs="0" name="DEPARTMENT_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="DISMISSALDATE" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GROUP_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="LOGIN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MESSAGES" nillable="true" type="tns:ArrayOfMESSAGE" />
+      <xs:element minOccurs="0" name="OTHER_INFO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PASSWORD" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERSON" nillable="true" type="tns:PERSON" />
+      <xs:element minOccurs="0" name="PERSON_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="PHONE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POST" nillable="true" type="tns:POST" />
+      <xs:element minOccurs="0" name="POST_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="POST_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="SALT" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="USERS_GROUPS" nillable="true" type="tns:ArrayOfUSERS_GROUPS" />
+      <xs:element minOccurs="0" name="USERS_LOG" nillable="true" type="tns:ArrayOfUSERS_LOG" />
+      <xs:element minOccurs="0" name="USERS_MESSAGES" nillable="true" type="tns:ArrayOfUSERS_MESSAGES" />
+      <xs:element minOccurs="0" name="USERS_RANGES" nillable="true" type="tns:ArrayOfUSERS_RANGES" />
+      <xs:element minOccurs="0" name="USERS_RIGHTS" nillable="true" type="tns:ArrayOfUSERS_RIGHTS" />
+      <xs:element minOccurs="0" name="WORK_EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WORK_PHONE" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="PERSONSHISTORY" nillable="true" type="tns:PERSONSHISTORY" />
+  <xs:complexType name="ADDRESS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="IDK" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERSONSHISTORies" nillable="true" type="tns:ArrayOfPERSONSHISTORY" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="ADDRESS" nillable="true" type="tns:ADDRESS" />
+  <xs:complexType name="ArrayOfPERSONSHISTORY">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PERSONSHISTORY" nillable="true" type="tns:PERSONSHISTORY" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPERSONSHISTORY" nillable="true" type="tns:ArrayOfPERSONSHISTORY" />
+  <xs:complexType name="DEPARTMENT">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ACTIVE" type="xs:short" />
+      <xs:element minOccurs="0" name="FSORT" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PARENT_ID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PERSONSHISTORies" nillable="true" type="tns:ArrayOfPERSONSHISTORY" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="DEPARTMENT" nillable="true" type="tns:DEPARTMENT" />
+  <xs:complexType name="ArrayOfMESSAGE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MESSAGE" nillable="true" type="tns:MESSAGE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMESSAGE" nillable="true" type="tns:ArrayOfMESSAGE" />
+  <xs:complexType name="MESSAGE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PERSONSHISTORY" nillable="true" type="tns:PERSONSHISTORY" />
+      <xs:element minOccurs="0" name="USERS_MESSAGES" nillable="true" type="tns:ArrayOfUSERS_MESSAGES" />
+      <xs:element minOccurs="0" name="active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="count" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="dtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="message_text" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sender_id" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="MESSAGE" nillable="true" type="tns:MESSAGE" />
+  <xs:complexType name="ArrayOfUSERS_MESSAGES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="USERS_MESSAGES" nillable="true" type="tns:USERS_MESSAGES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUSERS_MESSAGES" nillable="true" type="tns:ArrayOfUSERS_MESSAGES" />
+  <xs:complexType name="USERS_MESSAGES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MESSAGE" nillable="true" type="tns:MESSAGE" />
+      <xs:element minOccurs="0" name="PERSONSHISTORY" nillable="true" type="tns:PERSONSHISTORY" />
+      <xs:element minOccurs="0" name="count" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="message_id" type="xs:int" />
+      <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="USERS_MESSAGES" nillable="true" type="tns:USERS_MESSAGES" />
+  <xs:complexType name="PERSON">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ANOTHER_EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="COUNTRY_ID" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="DATE_OF_BIRTH" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="EMAIL" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FIRSTNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="OTHER_INFO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PATRONYMIC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERSONSHISTORies" nillable="true" type="tns:ArrayOfPERSONSHISTORY" />
+      <xs:element minOccurs="0" name="PHONE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PHOTO" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="POST_CODE" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SEX" nillable="true" type="xs:short" />
+      <xs:element minOccurs="0" name="SITY" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SURNAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TIMEMARKER" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="PERSON" nillable="true" type="tns:PERSON" />
+  <xs:complexType name="POST">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FSORT" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="ID" type="xs:int" />
+      <xs:element minOccurs="0" name="NAME" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PERSONSHISTORies" nillable="true" type="tns:ArrayOfPERSONSHISTORY" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="POST" nillable="true" type="tns:POST" />
+  <xs:complexType name="ArrayOfUSERS_LOG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="USERS_LOG" nillable="true" type="tns:USERS_LOG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUSERS_LOG" nillable="true" type="tns:ArrayOfUSERS_LOG" />
+  <xs:complexType name="USERS_LOG">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LS_CONFIG" nillable="true" type="tns:LS_CONFIG" />
+      <xs:element minOccurs="0" name="PERSONSHISTORY" nillable="true" type="tns:PERSONSHISTORY" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      <xs:element minOccurs="0" name="time_off" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="time_on" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="user_id" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="USERS_LOG" nillable="true" type="tns:USERS_LOG" />
+  <xs:complexType name="ArrayOfUSERS_RANGES">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="USERS_RANGES" nillable="true" type="tns:USERS_RANGES" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUSERS_RANGES" nillable="true" type="tns:ArrayOfUSERS_RANGES" />
+  <xs:complexType name="USERS_RANGES">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LS_CONFIG" nillable="true" type="tns:LS_CONFIG" />
+      <xs:element minOccurs="0" name="PERSONSHISTORY" nillable="true" type="tns:PERSONSHISTORY" />
+      <xs:element minOccurs="0" name="active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="lower" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      <xs:element minOccurs="0" name="showall" type="xs:boolean" />
+      <xs:element minOccurs="0" name="sql" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="upper" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="USERS_RANGES" nillable="true" type="tns:USERS_RANGES" />
+  <xs:complexType name="ArrayOfUSERS_RIGHTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="USERS_RIGHTS" nillable="true" type="tns:USERS_RIGHTS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUSERS_RIGHTS" nillable="true" type="tns:ArrayOfUSERS_RIGHTS" />
+  <xs:complexType name="USERS_RIGHTS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EXPIRED" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="IS_ACTIVE" type="xs:short" />
+      <xs:element minOccurs="0" name="PERSONSHISTORY" nillable="true" type="tns:PERSONSHISTORY" />
+      <xs:element minOccurs="0" name="RIGHT" nillable="true" type="tns:RIGHT" />
+      <xs:element minOccurs="0" name="RIGHT_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="SYSTEM_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="TIMEMARKER" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="USER_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="XML_RIGHT" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="USERS_RIGHTS" nillable="true" type="tns:USERS_RIGHTS" />
+  <xs:complexType name="ArrayOfGROUP">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GROUP" nillable="true" type="tns:GROUP" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGROUP" nillable="true" type="tns:ArrayOfGROUP" />
+  <xs:complexType name="ArrayOfPERSON">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PERSON" nillable="true" type="tns:PERSON" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPERSON" nillable="true" type="tns:ArrayOfPERSON" />
+  <xs:complexType name="ArrayOfADDRESS">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ADDRESS" nillable="true" type="tns:ADDRESS" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfADDRESS" nillable="true" type="tns:ArrayOfADDRESS" />
+  <xs:complexType name="ArrayOfDEPARTMENT">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DEPARTMENT" nillable="true" type="tns:DEPARTMENT" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDEPARTMENT" nillable="true" type="tns:ArrayOfDEPARTMENT" />
+  <xs:complexType name="ArrayOfPOST">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="POST" nillable="true" type="tns:POST" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPOST" nillable="true" type="tns:ArrayOfPOST" />
+  <xs:complexType name="ArrayOfLS_TYPE">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LS_TYPE" nillable="true" type="tns:LS_TYPE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLS_TYPE" nillable="true" type="tns:ArrayOfLS_TYPE" />
+  <xs:complexType name="ArrayOfALLANG">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ALLANG" nillable="true" type="tns:ALLANG" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfALLANG" nillable="true" type="tns:ArrayOfALLANG" />
+</xs:schema>

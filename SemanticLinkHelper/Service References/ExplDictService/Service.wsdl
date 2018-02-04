@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://ulif.org.ua/services/expldic" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ulif.org.ua/services/expldic" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ulif.org.ua/services/expldic/Imports">
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/IExplPerCall/Service.svc?xsd=xsd0" namespace="http://ulif.org.ua/services/expldic" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/IExplPerCall/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/IExplPerCall/Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/IExplPerCall/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/IExplPerCall/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VLLStaffDB" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IExplDic_SupplyPageOfData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplyPageOfData" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_SupplyPageOfData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplyPageOfDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_SupplyPageOfData2_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplyPageOfData2" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_SupplyPageOfData2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplyPageOfData2Response" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetRowCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRowCount" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetRowCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRowCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateStop_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStop" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateStop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_DeleteStop_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStop" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_DeleteStop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStopResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplSetPrinted_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplSetPrinted" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplSetPrinted_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplSetPrintedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplSymbolsQty_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplSymbolsQty" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplSymbolsQty_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplSymbolsQtyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetVerify_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetVerify" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetVerify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetVerifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateVerify_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVerify" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateVerify_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateVerifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetVerifiers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetVerifiers" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetVerifiers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetVerifiersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetLitsources_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetLitsources" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetLitsources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetLitsourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateLitsources_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLitsources" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateLitsources_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLitsourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplMakeDocX_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplMakeDocX" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplMakeDocX_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplMakeDocXResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_Search_InputMessage">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_Search_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateArticle" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateParams" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_CheckRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckRange" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_CheckRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetRangeState_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRangeState" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetRangeState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRangeStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetAlphaDigit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlphaDigit" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetAlphaDigit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlphaDigitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetUserRoles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRoles" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetUserRoles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRolesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetLangPrefix_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLangPrefix" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetLangPrefix_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLangPrefixResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetEditors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEditors" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetEditors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEditorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetEditorArticles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEditorArticles" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetEditorArticles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEditorArticlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplMakeArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplMakeArticle" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplMakeArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplMakeArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplMakeArticles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplMakeArticles" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplMakeArticles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplMakeArticlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplMakeArticleByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplMakeArticleByDate" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplMakeArticleByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplMakeArticleByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetArticle" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetArticles_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetArticles" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetArticles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetArticlesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetFrasIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetFrasIndex" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetFrasIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetFrasIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplNewArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplNewArticle" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplNewArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplNewArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplDeleteArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplDeleteArticle" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplDeleteArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplDeleteArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplCopyArticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplCopyArticle" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplCopyArticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplCopyArticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplWriteIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplWriteIndex" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplWriteIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplWriteIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetArticleHistory_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetArticleHistory" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetArticleHistory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetArticleHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplRestoreArticleByDate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplRestoreArticleByDate" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplRestoreArticleByDate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplRestoreArticleByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetFormulaNumber_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetFormulaNumber" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetFormulaNumber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetFormulaNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplCheckReestr_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplCheckReestr" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplCheckReestr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplCheckReestrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetStatExt_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetStatExt" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetStatExt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetStatExtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetUserNames_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetUserNames" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetUserNames_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetUserNamesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetUserRanges_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetUserRanges" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetUserRanges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetUserRangesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetInnerRanges_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetInnerRanges" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetInnerRanges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetInnerRangesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetLinkedInterpr_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetLinkedInterpr" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetLinkedInterpr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetLinkedInterprResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplAddToIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplAddToIndex" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplAddToIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplAddToIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplDeleteFromIndex_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplDeleteFromIndex" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplDeleteFromIndex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplDeleteFromIndexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetComments_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetComments" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetComments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateComment" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetCommentators_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetCommentators" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetCommentators_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetCommentatorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetHistoryByAction_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetHistoryByAction" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetHistoryByAction_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetHistoryByActionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetVolumes_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetVolumes" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetVolumes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetVolumesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetWorkTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkTime" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_GetWorkTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetFormulaVariants_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetFormulaVariants" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetFormulaVariants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetFormulaVariantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetIllustrVariants_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetIllustrVariants" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetIllustrVariants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetIllustrVariantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateFormulaVariants_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFormulaVariants" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateFormulaVariants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFormulaVariantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateIllustrVariants_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIllustrVariants" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_UpdateIllustrVariants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateIllustrVariantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetStop_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetStop" />
+  </wsdl:message>
+  <wsdl:message name="IExplDic_ExplGetStop_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExplGetStopResponse" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IExplDic">
+    <wsdl:operation name="SupplyPageOfData">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IDataPageRetriever/SupplyPageOfData" message="tns:IExplDic_SupplyPageOfData_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IDataPageRetriever/SupplyPageOfDataResponse" message="tns:IExplDic_SupplyPageOfData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SupplyPageOfData2">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IDataPageRetriever/SupplyPageOfData2" message="tns:IExplDic_SupplyPageOfData2_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IDataPageRetriever/SupplyPageOfData2Response" message="tns:IExplDic_SupplyPageOfData2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRowCount">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IDataPageRetriever/GetRowCount" message="tns:IExplDic_GetRowCount_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IDataPageRetriever/GetRowCountResponse" message="tns:IExplDic_GetRowCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStop">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateStop" message="tns:IExplDic_UpdateStop_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateStopResponse" message="tns:IExplDic_UpdateStop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteStop">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/DeleteStop" message="tns:IExplDic_DeleteStop_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/DeleteStopResponse" message="tns:IExplDic_DeleteStop_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplSetPrinted">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplSetPrinted" message="tns:IExplDic_ExplSetPrinted_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplSetPrintedResponse" message="tns:IExplDic_ExplSetPrinted_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplSymbolsQty">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplSymbolsQty" message="tns:IExplDic_ExplSymbolsQty_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplSymbolsQtyResponse" message="tns:IExplDic_ExplSymbolsQty_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetVerify">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetVerify" message="tns:IExplDic_ExplGetVerify_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetVerifyResponse" message="tns:IExplDic_ExplGetVerify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateVerify">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateVerify" message="tns:IExplDic_UpdateVerify_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateVerifyResponse" message="tns:IExplDic_UpdateVerify_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetVerifiers">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetVerifiers" message="tns:IExplDic_ExplGetVerifiers_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetVerifiersResponse" message="tns:IExplDic_ExplGetVerifiers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetLitsources">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetLitsources" message="tns:IExplDic_ExplGetLitsources_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetLitsourcesResponse" message="tns:IExplDic_ExplGetLitsources_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLitsources">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateLitsources" message="tns:IExplDic_UpdateLitsources_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateLitsourcesResponse" message="tns:IExplDic_UpdateLitsources_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplMakeDocX">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplMakeDocX" message="tns:IExplDic_ExplMakeDocX_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplMakeDocXResponse" message="tns:IExplDic_ExplMakeDocX_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/Search" message="tns:IExplDic_Search_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/SearchResponse" message="tns:IExplDic_Search_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateArticle">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateArticle" message="tns:IExplDic_UpdateArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateArticleResponse" message="tns:IExplDic_UpdateArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateParams">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateParams" message="tns:IExplDic_UpdateParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateParamsResponse" message="tns:IExplDic_UpdateParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckRange">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/CheckRange" message="tns:IExplDic_CheckRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/CheckRangeResponse" message="tns:IExplDic_CheckRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRangeState">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetRangeState" message="tns:IExplDic_GetRangeState_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetRangeStateResponse" message="tns:IExplDic_GetRangeState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlphaDigit">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetAlphaDigit" message="tns:IExplDic_GetAlphaDigit_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetAlphaDigitResponse" message="tns:IExplDic_GetAlphaDigit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRoles">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetUserRoles" message="tns:IExplDic_GetUserRoles_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetUserRolesResponse" message="tns:IExplDic_GetUserRoles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLangPrefix">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetLangPrefix" message="tns:IExplDic_GetLangPrefix_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetLangPrefixResponse" message="tns:IExplDic_GetLangPrefix_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEditors">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetEditors" message="tns:IExplDic_GetEditors_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetEditorsResponse" message="tns:IExplDic_GetEditors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEditorArticles">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetEditorArticles" message="tns:IExplDic_GetEditorArticles_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetEditorArticlesResponse" message="tns:IExplDic_GetEditorArticles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplMakeArticle">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplMakeArticle" message="tns:IExplDic_ExplMakeArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplMakeArticleResponse" message="tns:IExplDic_ExplMakeArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplMakeArticles">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplMakeArticles" message="tns:IExplDic_ExplMakeArticles_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplMakeArticlesResponse" message="tns:IExplDic_ExplMakeArticles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplMakeArticleByDate">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplMakeArticleByDate" message="tns:IExplDic_ExplMakeArticleByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplMakeArticleByDateResponse" message="tns:IExplDic_ExplMakeArticleByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetArticle">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetArticle" message="tns:IExplDic_ExplGetArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetArticleResponse" message="tns:IExplDic_ExplGetArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetArticles">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetArticles" message="tns:IExplDic_ExplGetArticles_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetArticlesResponse" message="tns:IExplDic_ExplGetArticles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetFrasIndex">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetFrasIndex" message="tns:IExplDic_ExplGetFrasIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetFrasIndexResponse" message="tns:IExplDic_ExplGetFrasIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplNewArticle">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplNewArticle" message="tns:IExplDic_ExplNewArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplNewArticleResponse" message="tns:IExplDic_ExplNewArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplDeleteArticle">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplDeleteArticle" message="tns:IExplDic_ExplDeleteArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplDeleteArticleResponse" message="tns:IExplDic_ExplDeleteArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplCopyArticle">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplCopyArticle" message="tns:IExplDic_ExplCopyArticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplCopyArticleResponse" message="tns:IExplDic_ExplCopyArticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplWriteIndex">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplWriteIndex" message="tns:IExplDic_ExplWriteIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplWriteIndexResponse" message="tns:IExplDic_ExplWriteIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetArticleHistory">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetArticleHistory" message="tns:IExplDic_ExplGetArticleHistory_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetArticleHistoryResponse" message="tns:IExplDic_ExplGetArticleHistory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplRestoreArticleByDate">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplRestoreArticleByDate" message="tns:IExplDic_ExplRestoreArticleByDate_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplRestoreArticleByDateResponse" message="tns:IExplDic_ExplRestoreArticleByDate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetFormulaNumber">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetFormulaNumber" message="tns:IExplDic_ExplGetFormulaNumber_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetFormulaNumberResponse" message="tns:IExplDic_ExplGetFormulaNumber_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplCheckReestr">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplCheckReestr" message="tns:IExplDic_ExplCheckReestr_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplCheckReestrResponse" message="tns:IExplDic_ExplCheckReestr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetStatExt">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetStatExt" message="tns:IExplDic_ExplGetStatExt_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetStatExtResponse" message="tns:IExplDic_ExplGetStatExt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetUserNames">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetUserNames" message="tns:IExplDic_ExplGetUserNames_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetUserNamesResponse" message="tns:IExplDic_ExplGetUserNames_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetUserRanges">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetUserRanges" message="tns:IExplDic_ExplGetUserRanges_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetUserRangesResponse" message="tns:IExplDic_ExplGetUserRanges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetInnerRanges">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetInnerRanges" message="tns:IExplDic_ExplGetInnerRanges_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetInnerRangesResponse" message="tns:IExplDic_ExplGetInnerRanges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetLinkedInterpr">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetLinkedInterpr" message="tns:IExplDic_ExplGetLinkedInterpr_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetLinkedInterprResponse" message="tns:IExplDic_ExplGetLinkedInterpr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplAddToIndex">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplAddToIndex" message="tns:IExplDic_ExplAddToIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplAddToIndexResponse" message="tns:IExplDic_ExplAddToIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplDeleteFromIndex">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplDeleteFromIndex" message="tns:IExplDic_ExplDeleteFromIndex_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplDeleteFromIndexResponse" message="tns:IExplDic_ExplDeleteFromIndex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetComments">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetComments" message="tns:IExplDic_ExplGetComments_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetCommentsResponse" message="tns:IExplDic_ExplGetComments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateComment">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateComment" message="tns:IExplDic_UpdateComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateCommentResponse" message="tns:IExplDic_UpdateComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetCommentators">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetCommentators" message="tns:IExplDic_ExplGetCommentators_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetCommentatorsResponse" message="tns:IExplDic_ExplGetCommentators_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetHistoryByAction">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetHistoryByAction" message="tns:IExplDic_ExplGetHistoryByAction_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetHistoryByActionResponse" message="tns:IExplDic_ExplGetHistoryByAction_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetVolumes">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetVolumes" message="tns:IExplDic_ExplGetVolumes_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetVolumesResponse" message="tns:IExplDic_ExplGetVolumes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkTime">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetWorkTime" message="tns:IExplDic_GetWorkTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/GetWorkTimeResponse" message="tns:IExplDic_GetWorkTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetFormulaVariants">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetFormulaVariants" message="tns:IExplDic_ExplGetFormulaVariants_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetFormulaVariantsResponse" message="tns:IExplDic_ExplGetFormulaVariants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetIllustrVariants">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetIllustrVariants" message="tns:IExplDic_ExplGetIllustrVariants_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetIllustrVariantsResponse" message="tns:IExplDic_ExplGetIllustrVariants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFormulaVariants">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateFormulaVariants" message="tns:IExplDic_UpdateFormulaVariants_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateFormulaVariantsResponse" message="tns:IExplDic_UpdateFormulaVariants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIllustrVariants">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateIllustrVariants" message="tns:IExplDic_UpdateIllustrVariants_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/UpdateIllustrVariantsResponse" message="tns:IExplDic_UpdateIllustrVariants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExplGetStop">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetStop" message="tns:IExplDic_ExplGetStop_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/expldic/IExplDic/ExplGetStopResponse" message="tns:IExplDic_ExplGetStop_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

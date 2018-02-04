@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ulif.org.ua/services/expldic" elementFormDefault="qualified" targetNamespace="http://ulif.org.ua/services/expldic" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/IExplPerCall/Service.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/IExplPerCall/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" />
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/IExplPerCall/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VLLStaffDB" />
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/IExplPerCall/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="SupplyPageOfData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lowerPageBoundary" type="xs:int" />
+        <xs:element minOccurs="0" name="rowsPerPage" type="xs:int" />
+        <xs:element minOccurs="0" name="dir" type="xs:boolean" />
+        <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="show" type="xs:boolean" />
+        <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ranges" nillable="true" type="q1:ArrayOfint" />
+        <xs:element minOccurs="0" name="alt" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplyPageOfDataResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="SupplyPageOfDataResult" nillable="true" type="q2:ArrayOfelList" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplyPageOfData2">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lowerPageBoundary" type="xs:int" />
+        <xs:element minOccurs="0" name="rowsPerPage" type="xs:int" />
+        <xs:element minOccurs="0" name="dir" type="xs:boolean" />
+        <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="show" type="xs:boolean" />
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ranges" nillable="true" type="q3:ArrayOfint" />
+        <xs:element minOccurs="0" name="alt" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SupplyPageOfData2Response">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="SupplyPageOfData2Result" nillable="true" type="q4:ArrayOfnom" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRowCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="show" type="xs:boolean" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ranges" nillable="true" type="q5:ArrayOfint" />
+        <xs:element minOccurs="0" name="alt" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRowCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetRowCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateStop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="tstop" nillable="true" type="q6:ArrayOfstop" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateStopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateStopResult" type="xs:int" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="tstop" nillable="true" type="q7:ArrayOfstop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteStop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteStopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteStopResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplSetPrinted">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="printed" type="xs:boolean" />
+        <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="show" type="xs:boolean" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ranges" nillable="true" type="q8:ArrayOfint" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplSetPrintedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplSetPrintedResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplSymbolsQty">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lower" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="upper" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplSymbolsQtyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplSymbolsQtyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetVerify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetVerifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ExplGetVerifyResult" nillable="true" type="q9:verify" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateVerify">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="vrf" nillable="true" type="q10:verify" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateVerifyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateVerifyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetVerifiers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetVerifiersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExplGetVerifiersResult" nillable="true" type="q11:ArrayOfKeyValueOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetLitsources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="active" type="xs:boolean" />
+        <xs:element minOccurs="0" name="all" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetLitsourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ExplGetLitsourcesResult" nillable="true" type="q12:ArrayOflitsources" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLitsources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="tsources" nillable="true" type="q13:ArrayOflitsources" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateLitsourcesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateLitsourcesResult" type="xs:int" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="tsources" nillable="true" type="q14:ArrayOflitsources" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplMakeDocX">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="bbarticle" nillable="true" type="xs:base64Binary" />
+        <xs:element minOccurs="0" name="docstyle" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="font" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplMakeDocXResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplMakeDocXResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Search">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="txt" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dir" type="xs:boolean" />
+        <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="show" type="xs:boolean" />
+        <xs:element xmlns:q15="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ranges" nillable="true" type="q15:ArrayOfint" />
+        <xs:element minOccurs="0" name="alt" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SearchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SearchResult" type="xs:int" />
+        <xs:element minOccurs="0" name="qty" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateArticle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="art" nillable="true" type="q16:nom" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateArticleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateArticleResult" type="xs:int" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="art" nillable="true" type="q17:nom" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateParams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="el" nillable="true" type="q18:elList" />
+        <xs:element minOccurs="0" name="changetype" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateParamsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateParamsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckRange">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="word" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckRangeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CheckRangeResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRangeState">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="word" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRangeStateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetRangeStateResult" nillable="true" type="q19:ArrayOfunsignedByte" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlphaDigit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlphaDigitResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="GetAlphaDigitResult" nillable="true" type="q20:ArrayOfalphadigit" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRoles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserRolesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetUserRolesResult" nillable="true" type="q21:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLangPrefix">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetLangPrefixResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetLangPrefixResult" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dbname" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEditorsResult" nillable="true" type="q22:ArrayOfKeyValueOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditorArticles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="login" type="xs:int" />
+        <xs:element minOccurs="0" name="from" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="to" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEditorArticlesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetEditorArticlesResult" nillable="true" type="q23:ArrayOfKeyValueOfstringint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplMakeArticle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="viewill" type="xs:boolean" />
+        <xs:element minOccurs="0" name="highlight" type="xs:boolean" />
+        <xs:element minOccurs="0" name="frlinks" type="xs:boolean" />
+        <xs:element minOccurs="0" name="updateqty" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplMakeArticleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplMakeArticleResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplMakeArticles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="word" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="viewill" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplMakeArticlesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExplMakeArticlesResult" nillable="true" type="q24:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplMakeArticleByDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="highlight" type="xs:boolean" />
+        <xs:element minOccurs="0" name="frlinks" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplMakeArticleByDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplMakeArticleByDateResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetArticle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="tp" type="q25:tabletype" />
+        <xs:element minOccurs="0" name="tables" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="variants" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetArticleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ExplGetArticleResult" nillable="true" type="q26:nom" />
+        <xs:element minOccurs="0" name="inrange" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetArticles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="word" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="linked" type="xs:boolean" />
+        <xs:element minOccurs="0" name="exact" type="xs:boolean" />
+        <xs:element minOccurs="0" name="fras" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetArticlesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ExplGetArticlesResult" nillable="true" type="q27:ArrayOfnom" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetFrasIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetFrasIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ExplGetFrasIndexResult" nillable="true" type="q28:ArrayOffrindex" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplNewArticle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="reestr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="omon" type="xs:int" />
+        <xs:element minOccurs="0" name="active" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplNewArticleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplNewArticleResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplDeleteArticle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplDeleteArticleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplDeleteArticleResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplCopyArticle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="active" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplCopyArticleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplCopyArticleResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplWriteIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="from" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="to" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ikind" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplWriteIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplWriteIndexResult" nillable="true" type="xs:base64Binary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetArticleHistory">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetArticleHistoryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ExplGetArticleHistoryResult" nillable="true" type="q29:ArrayOfArticleHistory" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplRestoreArticleByDate">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="time" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplRestoreArticleByDateResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplRestoreArticleByDateResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetFormulaNumber">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetFormulaNumberResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplGetFormulaNumberResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplCheckReestr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="reestr" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="omon" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplCheckReestrResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplCheckReestrResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetStatExt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="check" nillable="true" type="q30:ArrayOfArrayOfboolean" />
+        <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userid" type="xs:int" />
+        <xs:element minOccurs="0" name="dfrom" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dto" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="stage" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetStatExtResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExplGetStatExtResult" nillable="true" type="q31:ArrayOfArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetUserNames">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+        <xs:element minOccurs="0" name="role" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetUserNamesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ExplGetUserNamesResult" nillable="true" type="q32:ArrayOfKeyValueOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetUserRanges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userid" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetUserRangesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/VLLStaffDB" minOccurs="0" name="ExplGetUserRangesResult" nillable="true" type="q33:ArrayOfranges" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetInnerRanges">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="lower" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="upper" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="status" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetInnerRangesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/VLLStaffDB" minOccurs="0" name="ExplGetInnerRangesResult" nillable="true" type="q34:ArrayOfranges" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetLinkedInterpr">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="word" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetLinkedInterprResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ExplGetLinkedInterprResult" nillable="true" type="q35:ArrayOfformula" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplAddToIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="phr_id" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplAddToIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplAddToIndexResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplDeleteFromIndex">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplDeleteFromIndexResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplDeleteFromIndexResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetComments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetCommentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ExplGetCommentsResult" nillable="true" type="q36:ArrayOfcomments" />
+        <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="authors" nillable="true" type="q37:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="comm" nillable="true" type="q38:comments" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateCommentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateCommentResult" type="xs:int" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="comm" nillable="true" type="q39:comments" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetCommentators">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetCommentatorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ExplGetCommentatorsResult" type="xs:int" />
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="authors" nillable="true" type="q40:ArrayOfKeyValueOfintstring" />
+        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="editors" nillable="true" type="q41:ArrayOfKeyValueOfintstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetHistoryByAction">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="filter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="action" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="level" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="dtfrom" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtto" nillable="true" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetHistoryByActionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ExplGetHistoryByActionResult" nillable="true" type="q42:ArrayOfHistoryShort" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetVolumes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetVolumesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/VLLStaffDB" minOccurs="0" name="ExplGetVolumesResult" nillable="true" type="q43:ArrayOfranges" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userid" type="xs:int" />
+        <xs:element minOccurs="0" name="from" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="to" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkTimeResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="GetWorkTimeResult" type="q44:duration" />
+        <xs:element minOccurs="0" name="days" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetFormulaVariants">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetFormulaVariantsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ExplGetFormulaVariantsResult" nillable="true" type="q45:ArrayOfformula_alt" />
+        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="authors" nillable="true" type="q46:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetIllustrVariants">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id" type="xs:int" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetIllustrVariantsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ExplGetIllustrVariantsResult" nillable="true" type="q47:ArrayOfillustr_alt" />
+        <xs:element xmlns:q48="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="authors" nillable="true" type="q48:ArrayOfstring" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFormulaVariants">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="fvars" nillable="true" type="q49:ArrayOfformula_alt" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFormulaVariantsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFormulaVariantsResult" type="xs:int" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="fvars" nillable="true" type="q50:ArrayOfformula_alt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIllustrVariants">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ivars" nillable="true" type="q51:ArrayOfillustr_alt" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateIllustrVariantsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateIllustrVariantsResult" type="xs:int" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ivars" nillable="true" type="q52:ArrayOfillustr_alt" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetStop">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="onlyactive" type="xs:boolean" />
+        <xs:element minOccurs="0" name="ls_id" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ExplGetStopResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" minOccurs="0" name="ExplGetStopResult" nillable="true" type="q53:ArrayOfstop" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

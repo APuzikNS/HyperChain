@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://ulif.org.ua/services/lib5" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ulif.org.ua/services/lib5" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ulif.org.ua/services/lib5/Imports">
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd0" namespace="http://ulif.org.ua/services/lib5" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/gldescript" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd3" namespace="http://ulif.org.ua/lib5/" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/fdict" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Ilib5_SupplyPageOfData_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupplyPageOfData" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_SupplyPageOfData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupplyPageOfDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_ReestrGetID_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReestrGetID" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_ReestrGetID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReestrGetIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_ReestrGetLen_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReestrGetLen" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_ReestrGetLen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReestrGetLenResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_ReestrGetWord_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReestrGetWord" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_ReestrGetWord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReestrGetWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_GenerateWPar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateWPar" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_GenerateWPar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateWParResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_GenerateWPar2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateWPar2" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_GenerateWPar2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateWPar2Response" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_GenerateWPar3_InputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateWPar3" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_GenerateWPar3_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GenerateWPar3Response" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_SearchWord_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchWord" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_SearchWord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_SearchDicWord_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDicWord" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_SearchDicWord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchDicWordResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_SearchOrderNum_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchOrderNum" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_SearchOrderNum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchOrderNumResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_existdict_InputMessage">
+    <wsdl:part name="parameters" element="tns:existdict" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_existdict_OutputMessage">
+    <wsdl:part name="parameters" element="tns:existdictResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_existdicts_InputMessage">
+    <wsdl:part name="parameters" element="tns:existdicts" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_existdicts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:existdictsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_DictPrepare_InputMessage">
+    <wsdl:part name="parameters" element="tns:DictPrepare" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_DictPrepare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DictPrepareResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_DictPrepare2_InputMessage">
+    <wsdl:part name="parameters" element="tns:DictPrepare2" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_DictPrepare2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DictPrepare2Response" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_phrasPrepare_InputMessage">
+    <wsdl:part name="parameters" element="tns:phrasPrepare" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_phrasPrepare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:phrasPrepareResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getpharticle_InputMessage">
+    <wsdl:part name="parameters" element="tns:getpharticle" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getpharticle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getpharticleResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getpharticle2_InputMessage">
+    <wsdl:part name="parameters" element="tns:getpharticle2" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getpharticle2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getpharticle2Response" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_phcmp_InputMessage">
+    <wsdl:part name="parameters" element="tns:phcmp" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_phcmp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:phcmpResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_GetAppName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppName" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_GetAppName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_checkver_InputMessage">
+    <wsdl:part name="parameters" element="tns:checkver" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_checkver_OutputMessage">
+    <wsdl:part name="parameters" element="tns:checkverResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_processmorph_InputMessage">
+    <wsdl:part name="parameters" element="tns:processmorph" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_processmorph_OutputMessage">
+    <wsdl:part name="parameters" element="tns:processmorphResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getcwf_InputMessage">
+    <wsdl:part name="parameters" element="tns:getcwf" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getcwf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getcwfResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_processaccent_InputMessage">
+    <wsdl:part name="parameters" element="tns:processaccent" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_processaccent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:processaccentResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_processtranscr_InputMessage">
+    <wsdl:part name="parameters" element="tns:processtranscr" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_processtranscr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:processtranscrResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getAllPart_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPart" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getAllPart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPartResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getAllFirstWFormsWithParts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllFirstWFormsWithParts" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getAllFirstWFormsWithParts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllFirstWFormsWithPartsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getsemcomm_InputMessage">
+    <wsdl:part name="parameters" element="tns:getsemcomm" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getsemcomm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getsemcommResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getTypeWords_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTypeWords" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getTypeWords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTypeWordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getGramParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:getGramParams" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getGramParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getGramParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getPartIdAssotiations_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPartIdAssotiations" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getPartIdAssotiations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPartIdAssotiationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getAllPartGramInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPartGramInfo" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getAllPartGramInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllPartGramInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getCommonPartsInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCommonPartsInfo" />
+  </wsdl:message>
+  <wsdl:message name="Ilib5_getCommonPartsInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCommonPartsInfoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Ilib5">
+    <wsdl:operation name="SupplyPageOfData">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/IDataPageRetriever/SupplyPageOfData" message="tns:Ilib5_SupplyPageOfData_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/IDataPageRetriever/SupplyPageOfDataResponse" message="tns:Ilib5_SupplyPageOfData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReestrGetID">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/ReestrGetID" message="tns:Ilib5_ReestrGetID_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/ReestrGetIDResponse" message="tns:Ilib5_ReestrGetID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReestrGetLen">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/ReestrGetLen" message="tns:Ilib5_ReestrGetLen_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/ReestrGetLenResponse" message="tns:Ilib5_ReestrGetLen_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReestrGetWord">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/ReestrGetWord" message="tns:Ilib5_ReestrGetWord_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/ReestrGetWordResponse" message="tns:Ilib5_ReestrGetWord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateWPar">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/GenerateWPar" message="tns:Ilib5_GenerateWPar_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/GenerateWParResponse" message="tns:Ilib5_GenerateWPar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateWPar2">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/GenerateWPar2" message="tns:Ilib5_GenerateWPar2_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/GenerateWPar2Response" message="tns:Ilib5_GenerateWPar2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GenerateWPar3">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/GenerateWPar3" message="tns:Ilib5_GenerateWPar3_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/GenerateWPar3Response" message="tns:Ilib5_GenerateWPar3_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchWord">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/SearchWord" message="tns:Ilib5_SearchWord_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/SearchWordResponse" message="tns:Ilib5_SearchWord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchDicWord">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/SearchDicWord" message="tns:Ilib5_SearchDicWord_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/SearchDicWordResponse" message="tns:Ilib5_SearchDicWord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchOrderNum">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/SearchOrderNum" message="tns:Ilib5_SearchOrderNum_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/SearchOrderNumResponse" message="tns:Ilib5_SearchOrderNum_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="existdict">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/existdict" message="tns:Ilib5_existdict_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/existdictResponse" message="tns:Ilib5_existdict_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="existdicts">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/existdicts" message="tns:Ilib5_existdicts_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/existdictsResponse" message="tns:Ilib5_existdicts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DictPrepare">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/DictPrepare" message="tns:Ilib5_DictPrepare_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/DictPrepareResponse" message="tns:Ilib5_DictPrepare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DictPrepare2">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/DictPrepare2" message="tns:Ilib5_DictPrepare2_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/DictPrepare2Response" message="tns:Ilib5_DictPrepare2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="phrasPrepare">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/phrasPrepare" message="tns:Ilib5_phrasPrepare_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/phrasPrepareResponse" message="tns:Ilib5_phrasPrepare_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getpharticle">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getpharticle" message="tns:Ilib5_getpharticle_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getpharticleResponse" message="tns:Ilib5_getpharticle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getpharticle2">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getpharticle2" message="tns:Ilib5_getpharticle2_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getpharticle2Response" message="tns:Ilib5_getpharticle2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="phcmp">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/phcmp" message="tns:Ilib5_phcmp_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/phcmpResponse" message="tns:Ilib5_phcmp_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppName">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/GetAppName" message="tns:Ilib5_GetAppName_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/GetAppNameResponse" message="tns:Ilib5_GetAppName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="checkver">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/checkver" message="tns:Ilib5_checkver_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/checkverResponse" message="tns:Ilib5_checkver_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="processmorph">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/processmorph" message="tns:Ilib5_processmorph_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/processmorphResponse" message="tns:Ilib5_processmorph_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getcwf">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getcwf" message="tns:Ilib5_getcwf_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getcwfResponse" message="tns:Ilib5_getcwf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="processaccent">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/processaccent" message="tns:Ilib5_processaccent_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/processaccentResponse" message="tns:Ilib5_processaccent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="processtranscr">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/processtranscr" message="tns:Ilib5_processtranscr_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/processtranscrResponse" message="tns:Ilib5_processtranscr_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPart">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getAllPart" message="tns:Ilib5_getAllPart_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getAllPartResponse" message="tns:Ilib5_getAllPart_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllFirstWFormsWithParts">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getAllFirstWFormsWithParts" message="tns:Ilib5_getAllFirstWFormsWithParts_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getAllFirstWFormsWithPartsResponse" message="tns:Ilib5_getAllFirstWFormsWithParts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getsemcomm">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getsemcomm" message="tns:Ilib5_getsemcomm_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getsemcommResponse" message="tns:Ilib5_getsemcomm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTypeWords">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getTypeWords" message="tns:Ilib5_getTypeWords_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getTypeWordsResponse" message="tns:Ilib5_getTypeWords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getGramParams">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getGramParams" message="tns:Ilib5_getGramParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getGramParamsResponse" message="tns:Ilib5_getGramParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPartIdAssotiations">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getPartIdAssotiations" message="tns:Ilib5_getPartIdAssotiations_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getPartIdAssotiationsResponse" message="tns:Ilib5_getPartIdAssotiations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllPartGramInfo">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getAllPartGramInfo" message="tns:Ilib5_getAllPartGramInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getAllPartGramInfoResponse" message="tns:Ilib5_getAllPartGramInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCommonPartsInfo">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getCommonPartsInfo" message="tns:Ilib5_getCommonPartsInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/lib5/Ilib5/getCommonPartsInfoResponse" message="tns:Ilib5_getCommonPartsInfo_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

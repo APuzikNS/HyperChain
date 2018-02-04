@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/gldescript" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/gldescript" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="gldesc.dic">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INFL_DIC" />
+      <xs:enumeration value="TRANSCR_DIC" />
+      <xs:enumeration value="PHRAS_DIC" />
+      <xs:enumeration value="SYN_DIC" />
+      <xs:enumeration value="ANT_DIC" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="gldesc.dic" nillable="true" type="tns:gldesc.dic" />
+</xs:schema>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d0945d04-e3c6-48fe-9f31-0a9b0448dbf1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://lcorp.ulif.org.ua/Ilib7/service.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Service.wsdl" MetadataType="Wsdl" ID="a085d906-c3f1-49c4-8726-bd09922971a2" SourceId="1" SourceUrl="http://lcorp.ulif.org.ua/Ilib7/Service.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Service.xsd" MetadataType="Schema" ID="e8a46cab-e3a2-4281-91b7-edaa4aeb883d" SourceId="1" SourceUrl="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd2" />
+    <MetadataFile FileName="dictlib.wsdl" MetadataType="Wsdl" ID="7cced2d2-b9c5-4e07-8bca-ba068cd8c497" SourceId="1" SourceUrl="http://lcorp.ulif.org.ua/Ilib7/Service.svc?wsdl" />
+    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="4617ff87-38d4-47b8-9264-41f888102490" SourceId="1" SourceUrl="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service5.xsd" MetadataType="Schema" ID="ca08d28d-843b-4c0b-80a2-97b90db2dff7" SourceId="1" SourceUrl="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd4" />
+    <MetadataFile FileName="Service2.xsd" MetadataType="Schema" ID="b1d372bb-fc81-4bf8-a2ca-3dacc4c62124" SourceId="1" SourceUrl="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service4.xsd" MetadataType="Schema" ID="f441274c-92dc-4848-be86-edad9272e153" SourceId="1" SourceUrl="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd5" />
+    <MetadataFile FileName="Service.disco" MetadataType="Disco" ID="5d41c68f-612c-4fa3-abda-e0de2e620247" SourceId="1" SourceUrl="http://lcorp.ulif.org.ua/Ilib7/Service.svc?disco" />
+    <MetadataFile FileName="Service3.xsd" MetadataType="Schema" ID="23c78477-7d99-4fce-adb0-eb62c207606f" SourceId="1" SourceUrl="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

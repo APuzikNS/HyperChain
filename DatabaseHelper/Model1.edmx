@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SemanticDBModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="SemanticDBModelStoreContainer">
+          <EntitySet Name="tbl_Relations" EntityType="SemanticDBModel.Store.tbl_Relations" store:Type="Tables" />
+          <EntitySet Name="tbl_Words" EntityType="SemanticDBModel.Store.tbl_Words" store:Type="Tables" />
+          <AssociationSet Name="FK1" Association="SemanticDBModel.Store.FK1">
+            <End Role="tbl_Words" EntitySet="tbl_Words" />
+            <End Role="tbl_Relations" EntitySet="tbl_Relations" />
+          </AssociationSet>
+          <AssociationSet Name="FK2" Association="SemanticDBModel.Store.FK2">
+            <End Role="tbl_Words" EntitySet="tbl_Words" />
+            <End Role="tbl_Relations" EntitySet="tbl_Relations" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbl_Relations">
+          <Key>
+            <PropertyRef Name="ParentId" />
+            <PropertyRef Name="ChildId" />
+          </Key>
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="ChildId" Type="int" Nullable="false" />
+          <Property Name="IsAuto" Type="bit" Nullable="false" />
+          <Property Name="RelationType" Type="smallint" Nullable="false" />
+          <Property Name="OriginalRelationType" Type="smallint" />
+        </EntityType>
+        <EntityType Name="tbl_Words">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Word" Type="nvarchar" MaxLength="100" />
+          <Property Name="Status" Type="smallint" />
+          <Property Name="InMainDB" Type="bit" />
+          <Property Name="LastTimeUpdate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK1">
+          <End Role="tbl_Words" Type="SemanticDBModel.Store.tbl_Words" Multiplicity="1" />
+          <End Role="tbl_Relations" Type="SemanticDBModel.Store.tbl_Relations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Words">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Relations">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK2">
+          <End Role="tbl_Words" Type="SemanticDBModel.Store.tbl_Words" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_Relations" Type="SemanticDBModel.Store.tbl_Relations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_Words">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tbl_Relations">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SemanticDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="SemanticDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_Relations" EntityType="SemanticDBModel.RelationItem" />
+          <EntitySet Name="tbl_Words" EntityType="SemanticDBModel.WordItem" />
+          <AssociationSet Name="FK1" Association="SemanticDBModel.FK1">
+            <End Role="WordItem" EntitySet="tbl_Words" />
+            <End Role="RelationItem" EntitySet="tbl_Relations" />
+          </AssociationSet>
+          <AssociationSet Name="FK2" Association="SemanticDBModel.FK2">
+            <End Role="WordItem" EntitySet="tbl_Words" />
+            <End Role="RelationItem" EntitySet="tbl_Relations" />
+          </AssociationSet>
+          <EntitySet Name="EditorChoices" EntityType="SemanticDBModel.EditorChoice" />
+          <AssociationSet Name="FK_EditorChoiceRelationItem" Association="SemanticDBModel.FK_EditorChoiceRelationItem">
+            <End Role="EditorChoice" EntitySet="EditorChoices" />
+            <End Role="RelationItem" EntitySet="tbl_Relations" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="RelationItem">
+          <Key>
+            <PropertyRef Name="ParentId" />
+            <PropertyRef Name="ChildId" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="ParentId" Type="Int32" Nullable="false" />
+          <Property Name="ChildId" Type="Int32" Nullable="false" />
+          <Property Name="IsAuto" Type="Boolean" Nullable="false" />
+          <Property Name="RelationType" Type="Int16" Nullable="false" DefaultValue="0" />
+          <Property Name="OriginalRelationType" Type="Int16" />
+          <NavigationProperty Name="tbl_Words" Relationship="SemanticDBModel.FK1" FromRole="RelationItem" ToRole="WordItem" />
+          <NavigationProperty Name="tbl_Words1" Relationship="SemanticDBModel.FK2" FromRole="RelationItem" ToRole="WordItem" />
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="EditorChoices" Relationship="SemanticDBModel.FK_EditorChoiceRelationItem" FromRole="RelationItem" ToRole="EditorChoice" />
+        </EntityType>
+        <EntityType Name="WordItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Word" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="Status" Type="Int16" Nullable="false" DefaultValue="0" />
+          <Property Name="InMainDB" Type="Boolean" Nullable="false" DefaultValue="False" />
+          <Property Type="DateTime" Name="LastTimeUpdate" />
+          <NavigationProperty Name="tbl_Relations" Relationship="SemanticDBModel.FK1" FromRole="WordItem" ToRole="RelationItem" />
+          <NavigationProperty Name="tbl_Relations1" Relationship="SemanticDBModel.FK2" FromRole="WordItem" ToRole="RelationItem" />
+        </EntityType>
+        <Association Name="FK1">
+          <End Type="SemanticDBModel.WordItem" Role="WordItem" Multiplicity="1" />
+          <End Type="SemanticDBModel.RelationItem" Role="RelationItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WordItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RelationItem">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK2">
+          <End Type="SemanticDBModel.WordItem" Role="WordItem" Multiplicity="1" />
+          <End Type="SemanticDBModel.RelationItem" Role="RelationItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="WordItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="RelationItem">
+              <PropertyRef Name="ChildId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="EditorChoice">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="EditorId" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="EditorId" Nullable="false" />
+          <Property Type="Int32" Name="RelationItemId" Nullable="false" />
+          <Property Type="Boolean" Name="RelationType" Nullable="true" />
+          <NavigationProperty Name="RelationItem" Relationship="SemanticDBModel.FK_EditorChoiceRelationItem" FromRole="EditorChoice" ToRole="RelationItem" />
+        </EntityType>
+        <Association Name="FK_EditorChoiceRelationItem">
+          <End Type="SemanticDBModel.EditorChoice" Role="EditorChoice" Multiplicity="*" />
+          <End Type="SemanticDBModel.RelationItem" Role="RelationItem" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="RelationItem">
+              <PropertyRef Name="ParentId" />
+              <PropertyRef Name="ChildId" />
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="EditorChoice">
+              <PropertyRef Name="RelationItemParentId" />
+              <PropertyRef Name="RelationItemChildId" />
+              <PropertyRef Name="RelationItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SemanticDBModelStoreContainer" CdmEntityContainer="SemanticDBEntities">
+          <EntitySetMapping Name="tbl_Relations"><EntityTypeMapping TypeName="SemanticDBModel.RelationItem"><MappingFragment StoreEntitySet="tbl_Relations">
+            <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+            <ScalarProperty Name="ChildId" ColumnName="ChildId" />
+            <ScalarProperty Name="IsAuto" ColumnName="IsAuto" />
+            <ScalarProperty Name="RelationType" ColumnName="RelationType" />
+            <ScalarProperty Name="OriginalRelationType" ColumnName="OriginalRelationType" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="tbl_Words"><EntityTypeMapping TypeName="SemanticDBModel.WordItem"><MappingFragment StoreEntitySet="tbl_Words">
+            <ScalarProperty Name="LastTimeUpdate" ColumnName="LastTimeUpdate" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+            <ScalarProperty Name="Word" ColumnName="Word" />
+            <ScalarProperty Name="Status" ColumnName="Status" />
+            <ScalarProperty Name="InMainDB" ColumnName="InMainDB" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="SemanticDBModel.RelationItem" Width="1.5" PointX="0.75" PointY="0.75" Height="2.5571907552083331" IsExpanded="true" />
+        <EntityTypeShape EntityType="SemanticDBModel.WordItem" Width="1.5" PointX="3.625" PointY="0.5" Height="2.3648893229166661" IsExpanded="true" />
+        <AssociationConnector Association="SemanticDBModel.FK1" >
+          <ConnectorPoint PointX="3.625" PointY="1.8074446614583328" />
+          <ConnectorPoint PointX="2.25" PointY="1.8074446614583328" />
+        </AssociationConnector>
+        <AssociationConnector Association="SemanticDBModel.FK2" >
+          <ConnectorPoint PointX="3.625" PointY="1.2162223307291664" />
+          <ConnectorPoint PointX="2.25" PointY="1.2162223307291664" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="SemanticDBModel.EditorChoice" Width="2.25" PointX="6.875" PointY="1.5" Height="1.9802864583333339" />
+        <AssociationConnector Association="SemanticDBModel.FK_EditorChoiceRelationItem">
+          <ConnectorPoint PointX="6.875" PointY="3.2038378906249996" />
+          <ConnectorPoint PointX="2.25" PointY="3.2038378906249996" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

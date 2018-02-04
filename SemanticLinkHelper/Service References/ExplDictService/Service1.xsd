@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ExplDicDB.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/IExplPerCall/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfelList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="elList" nillable="true" type="tns:elList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfelList" nillable="true" type="tns:ArrayOfelList" />
+  <xs:complexType name="elList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="_fixed" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="changed" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="finaled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flags" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="isready" type="xs:boolean" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="login_str" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="odious" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="omon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="printed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="variants" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="word" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="elList" nillable="true" type="tns:elList" />
+  <xs:complexType name="ArrayOfnom">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="nom" nillable="true" type="tns:nom" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfnom" nillable="true" type="tns:ArrayOfnom" />
+  <xs:complexType name="nom">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="changed" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="changetype" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="comments" nillable="true" type="tns:ArrayOfcomments" />
+      <xs:element minOccurs="0" name="digit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="etymol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="finaled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fixed" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flags" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="formula" nillable="true" type="tns:ArrayOfformula" />
+      <xs:element minOccurs="0" name="formula_log" nillable="true" type="tns:ArrayOfformula_log" />
+      <xs:element minOccurs="0" name="frindex" nillable="true" type="tns:ArrayOffrindex" />
+      <xs:element minOccurs="0" name="grstatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="indexed" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="isactive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isbible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isdel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isoldsum" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isready" type="xs:boolean" />
+      <xs:element minOccurs="0" name="linkfrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="links_from" nillable="true" type="tns:ArrayOflinks" />
+      <xs:element minOccurs="0" name="links_to" nillable="true" type="tns:ArrayOflinks" />
+      <xs:element minOccurs="0" name="linkto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lpart" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nom_log" nillable="true" type="tns:ArrayOfnom_log" />
+      <xs:element minOccurs="0" name="nom_old" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="nred" type="xs:boolean" />
+      <xs:element minOccurs="0" name="odious" type="xs:boolean" />
+      <xs:element minOccurs="0" name="omon" type="xs:int" />
+      <xs:element minOccurs="0" name="part" type="xs:int" />
+      <xs:element minOccurs="0" name="printed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="qtyed" type="xs:int" />
+      <xs:element minOccurs="0" name="qtysymb" type="xs:int" />
+      <xs:element minOccurs="0" name="reestr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reverse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="variants" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="verify" nillable="true" type="tns:verify" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="nom" nillable="true" type="tns:nom" />
+  <xs:complexType name="ArrayOfcomments">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="comments" nillable="true" type="tns:comments" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfcomments" nillable="true" type="tns:ArrayOfcomments" />
+  <xs:complexType name="comments">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dt" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="element" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="id_nom" type="xs:int" />
+      <xs:element minOccurs="0" name="kind" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="nom" nillable="true" type="tns:nom" />
+      <xs:element minOccurs="0" name="reaction" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="state" type="xs:boolean" />
+      <xs:element minOccurs="0" name="state2" type="xs:boolean" />
+      <xs:element minOccurs="0" name="time_add" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="time_check" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="user_id" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="comments" nillable="true" type="tns:comments" />
+  <xs:complexType name="ArrayOfformula">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="formula" nillable="true" type="tns:formula" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfformula" nillable="true" type="tns:ArrayOfformula" />
+  <xs:complexType name="formula">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="changed" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="changetype" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="fixed" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="formula_alt" nillable="true" type="tns:ArrayOfformula_alt" />
+      <xs:element minOccurs="0" name="frindex" nillable="true" type="tns:ArrayOffrindex" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="id_nom" type="xs:int" />
+      <xs:element minOccurs="0" name="id_up" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="illustr" nillable="true" type="tns:ArrayOfillustr" />
+      <xs:element minOccurs="0" name="interpr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="kind" type="xs:int" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lv" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nom" nillable="true" type="tns:nom" />
+      <xs:element minOccurs="0" name="number" type="xs:int" />
+      <xs:element minOccurs="0" name="param" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sign" type="xs:int" />
+      <xs:element minOccurs="0" name="synset" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="formula" nillable="true" type="tns:formula" />
+  <xs:complexType name="ArrayOfformula_alt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="formula_alt" nillable="true" type="tns:formula_alt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfformula_alt" nillable="true" type="tns:ArrayOfformula_alt" />
+  <xs:complexType name="formula_alt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="checked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="dtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="formula" nillable="true" type="tns:formula" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="id_formula" type="xs:int" />
+      <xs:element minOccurs="0" name="interpr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="kind" type="xs:int" />
+      <xs:element minOccurs="0" name="login" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="param" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sign" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="formula_alt" nillable="true" type="tns:formula_alt" />
+  <xs:complexType name="ArrayOffrindex">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="frindex" nillable="true" type="tns:frindex" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOffrindex" nillable="true" type="tns:ArrayOffrindex" />
+  <xs:complexType name="frindex">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="changed" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="formula" nillable="true" type="tns:formula" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="id_fras" type="xs:int" />
+      <xs:element minOccurs="0" name="id_nom" type="xs:int" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="nom" nillable="true" type="tns:nom" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="frindex" nillable="true" type="tns:frindex" />
+  <xs:complexType name="ArrayOfillustr">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="illustr" nillable="true" type="tns:illustr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfillustr" nillable="true" type="tns:ArrayOfillustr" />
+  <xs:complexType name="illustr">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="changed" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="changetype" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="cm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="figur" type="xs:boolean" />
+      <xs:element minOccurs="0" name="formula" nillable="true" type="tns:formula" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="id_lv" type="xs:int" />
+      <xs:element minOccurs="0" name="id_source" type="xs:int" />
+      <xs:element minOccurs="0" name="ill" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="illustr_alt" nillable="true" type="tns:ArrayOfillustr_alt" />
+      <xs:element minOccurs="0" name="kind" type="xs:int" />
+      <xs:element minOccurs="0" name="litsources" nillable="true" type="tns:litsources" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="number" type="xs:int" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="illustr" nillable="true" type="tns:illustr" />
+  <xs:complexType name="ArrayOfillustr_alt">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="illustr_alt" nillable="true" type="tns:illustr_alt" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfillustr_alt" nillable="true" type="tns:ArrayOfillustr_alt" />
+  <xs:complexType name="illustr_alt">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="checked" type="xs:boolean" />
+      <xs:element minOccurs="0" name="cm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="dtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="figur" type="xs:boolean" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="id_illustr" type="xs:int" />
+      <xs:element minOccurs="0" name="id_source" type="xs:int" />
+      <xs:element minOccurs="0" name="illustr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="illustr1" nillable="true" type="tns:illustr" />
+      <xs:element minOccurs="0" name="kind" type="xs:int" />
+      <xs:element minOccurs="0" name="litsources" nillable="true" type="tns:litsources" />
+      <xs:element minOccurs="0" name="login" type="xs:int" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="illustr_alt" nillable="true" type="tns:illustr_alt" />
+  <xs:complexType name="litsources">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="illustr" nillable="true" type="tns:ArrayOfillustr" />
+      <xs:element minOccurs="0" name="illustr_alt" nillable="true" type="tns:ArrayOfillustr_alt" />
+      <xs:element minOccurs="0" name="illustr_log" nillable="true" type="tns:ArrayOfillustr_log" />
+      <xs:element minOccurs="0" name="isactive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isdel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="rank" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="litsources" nillable="true" type="tns:litsources" />
+  <xs:complexType name="ArrayOfillustr_log">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="illustr_log" nillable="true" type="tns:illustr_log" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfillustr_log" nillable="true" type="tns:ArrayOfillustr_log" />
+  <xs:complexType name="illustr_log">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="action" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="changed" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="changetype" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="cm" type="xs:boolean" />
+      <xs:element minOccurs="0" name="figur" type="xs:boolean" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="id_log" type="xs:int" />
+      <xs:element minOccurs="0" name="id_lv" type="xs:int" />
+      <xs:element minOccurs="0" name="id_source" type="xs:int" />
+      <xs:element minOccurs="0" name="ill" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="kind" type="xs:int" />
+      <xs:element minOccurs="0" name="litsources" nillable="true" type="tns:litsources" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="number" type="xs:int" />
+      <xs:element minOccurs="0" name="time_log" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="illustr_log" nillable="true" type="tns:illustr_log" />
+  <xs:complexType name="ArrayOfformula_log">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="formula_log" nillable="true" type="tns:formula_log" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfformula_log" nillable="true" type="tns:ArrayOfformula_log" />
+  <xs:complexType name="formula_log">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="action" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="changed" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="changetype" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="fixed" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="id_log" type="xs:int" />
+      <xs:element minOccurs="0" name="id_nom" type="xs:int" />
+      <xs:element minOccurs="0" name="id_up" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="interpr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="kind" type="xs:int" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lv" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nom" nillable="true" type="tns:nom" />
+      <xs:element minOccurs="0" name="number" type="xs:int" />
+      <xs:element minOccurs="0" name="param" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sign" type="xs:int" />
+      <xs:element minOccurs="0" name="synset" type="xs:int" />
+      <xs:element minOccurs="0" name="time_log" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="formula_log" nillable="true" type="tns:formula_log" />
+  <xs:complexType name="ArrayOflinks">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="links" nillable="true" type="tns:links" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOflinks" nillable="true" type="tns:ArrayOflinks" />
+  <xs:complexType name="links">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="changed" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="link_from" type="xs:int" />
+      <xs:element minOccurs="0" name="link_to" type="xs:int" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="nom_from" nillable="true" type="tns:nom" />
+      <xs:element minOccurs="0" name="nom_to" nillable="true" type="tns:nom" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="links" nillable="true" type="tns:links" />
+  <xs:complexType name="ArrayOfnom_log">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="nom_log" nillable="true" type="tns:nom_log" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfnom_log" nillable="true" type="tns:ArrayOfnom_log" />
+  <xs:complexType name="nom_log">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="action" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="changed" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="changetype" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="digit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="dtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="etymol" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="finaled" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fixed" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="flags" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="grstatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="id_log" type="xs:int" />
+      <xs:element minOccurs="0" name="indexed" nillable="true" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="isactive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isbible" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isdel" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isoldsum" type="xs:boolean" />
+      <xs:element minOccurs="0" name="isready" type="xs:boolean" />
+      <xs:element minOccurs="0" name="linkfrom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="linkto" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lpart" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="nom" nillable="true" type="tns:nom" />
+      <xs:element minOccurs="0" name="nom_old" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="nred" type="xs:boolean" />
+      <xs:element minOccurs="0" name="odious" type="xs:boolean" />
+      <xs:element minOccurs="0" name="omon" type="xs:int" />
+      <xs:element minOccurs="0" name="part" type="xs:int" />
+      <xs:element minOccurs="0" name="printed" type="xs:boolean" />
+      <xs:element minOccurs="0" name="qtyed" type="xs:int" />
+      <xs:element minOccurs="0" name="qtysymb" type="xs:int" />
+      <xs:element minOccurs="0" name="reestr" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="reverse" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="time_log" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="variants" nillable="true" type="xs:unsignedByte" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="nom_log" nillable="true" type="tns:nom_log" />
+  <xs:complexType name="verify">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="concl_final" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="concl_lex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="google_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="google_qty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="group1" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="group2" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="nom" nillable="true" type="tns:nom" />
+      <xs:element minOccurs="0" name="unlc_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="unlc_qty" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="user_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="yandex_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="yandex_qty" nillable="true" type="xs:int" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="verify" nillable="true" type="tns:verify" />
+  <xs:complexType name="ArrayOfstop">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="stop" nillable="true" type="tns:stop" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfstop" nillable="true" type="tns:ArrayOfstop" />
+  <xs:complexType name="stop">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="active" type="xs:boolean" />
+      <xs:element minOccurs="0" name="code" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="word" nillable="true" type="xs:string" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="stop" nillable="true" type="tns:stop" />
+  <xs:complexType name="ArrayOflitsources">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="litsources" nillable="true" type="tns:litsources" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOflitsources" nillable="true" type="tns:ArrayOflitsources" />
+  <xs:complexType name="ArrayOfalphadigit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="alphadigit" nillable="true" type="tns:alphadigit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfalphadigit" nillable="true" type="tns:ArrayOfalphadigit" />
+  <xs:complexType name="alphadigit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alpha" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="digit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lang" type="xs:int" />
+      <xs:element minOccurs="0" name="ls" type="xs:unsignedByte" />
+    </xs:sequence>
+    <xs:attribute ref="ser:Id" />
+    <xs:attribute ref="ser:Ref" />
+  </xs:complexType>
+  <xs:element name="alphadigit" nillable="true" type="tns:alphadigit" />
+  <xs:simpleType name="tabletype">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="nom" />
+      <xs:enumeration value="formula" />
+      <xs:enumeration value="illustr" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="tabletype" nillable="true" type="tns:tabletype" />
+  <xs:complexType name="ArrayOfArticleHistory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ArticleHistory" type="tns:ArticleHistory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfArticleHistory" nillable="true" type="tns:ArrayOfArticleHistory" />
+  <xs:complexType name="ArticleHistory">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="action" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="data" nillable="true" type="xs:anyType" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="iscurrent" type="xs:boolean" />
+      <xs:element minOccurs="0" name="level" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="time" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArticleHistory" nillable="true" type="tns:ArticleHistory" />
+  <xs:complexType name="ArrayOfHistoryShort">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HistoryShort" nillable="true" type="tns:HistoryShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHistoryShort" nillable="true" type="tns:ArrayOfHistoryShort" />
+  <xs:complexType name="HistoryShort">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="dtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="login_str" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="omon" type="xs:int" />
+      <xs:element minOccurs="0" name="word" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HistoryShort" nillable="true" type="tns:HistoryShort" />
+</xs:schema>

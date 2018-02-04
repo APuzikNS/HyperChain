@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ulif.org.ua/lib5/" elementFormDefault="qualified" targetNamespace="http://ulif.org.ua/lib5/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:import schemaLocation="http://lcorp.ulif.org.ua/Ilib7/Service.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfListElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ListElement" type="tns:ListElement" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfListElement" nillable="true" type="tns:ArrayOfListElement" />
+  <xs:complexType name="ListElement">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="a" type="xs:boolean" />
+      <xs:element minOccurs="0" name="f" type="xs:boolean" />
+      <xs:element minOccurs="0" name="s" type="xs:boolean" />
+      <xs:element minOccurs="0" name="uid" type="xs:int" />
+      <xs:element minOccurs="0" name="w" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListElement" nillable="true" type="tns:ListElement" />
+  <xs:complexType name="ArrayOfmorphstr">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="morphstr" type="tns:morphstr" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmorphstr" nillable="true" type="tns:ArrayOfmorphstr" />
+  <xs:complexType name="morphstr">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="scode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="word" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="morphstr" nillable="true" type="tns:morphstr" />
+  <xs:complexType name="ArrayOfWordUniAndPartAndOmon">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="WordUniAndPartAndOmon" type="tns:WordUniAndPartAndOmon" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfWordUniAndPartAndOmon" nillable="true" type="tns:ArrayOfWordUniAndPartAndOmon" />
+  <xs:complexType name="WordUniAndPartAndOmon">
+    <xs:annotation>
+      <xs:appinfo>
+        <IsValueType xmlns="http://schemas.microsoft.com/2003/10/Serialization/">true</IsValueType>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="f6" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="f7" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="forma" nillable="true" type="xs:string" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="gram" nillable="true" type="q1:ArrayOfunsignedShort" />
+      <xs:element minOccurs="0" name="omon" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="part" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="part_id" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="scomment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="uni" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="WordUniAndPartAndOmon" nillable="true" type="tns:WordUniAndPartAndOmon" />
+  <xs:complexType name="ArrayOftypeWord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="typeWord" type="tns:typeWord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftypeWord" nillable="true" type="tns:ArrayOftypeWord" />
+  <xs:simpleType name="typeWord">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Lemmat" />
+      <xs:enumeration value="Omon" />
+      <xs:enumeration value="Nelamat" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="typeWord" nillable="true" type="tns:typeWord" />
+  <xs:complexType name="ArrayOfpartgramInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="partgramInfo" nillable="true" type="tns:partgramInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfpartgramInfo" nillable="true" type="tns:ArrayOfpartgramInfo" />
+  <xs:complexType name="partgramInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="commonid" type="xs:int" />
+      <xs:element minOccurs="0" name="id_parts" type="xs:unsignedByte" />
+      <xs:element minOccurs="0" name="namepart" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="partgramInfo" nillable="true" type="tns:partgramInfo" />
+  <xs:complexType name="ArrayOfCommonPartsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CommonPartsInfo" nillable="true" type="tns:CommonPartsInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommonPartsInfo" nillable="true" type="tns:ArrayOfCommonPartsInfo" />
+  <xs:complexType name="CommonPartsInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="commonId" type="xs:int" />
+      <xs:element minOccurs="0" name="commonPartName" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="grs" nillable="true" type="q2:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CommonPartsInfo" nillable="true" type="tns:CommonPartsInfo" />
+</xs:schema>

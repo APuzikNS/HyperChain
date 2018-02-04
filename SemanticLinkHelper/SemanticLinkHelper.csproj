@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2116D0AB-5995-4D83-8328-544108FD2170}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SemanticLinkHelper</RootNamespace>
+    <AssemblyName>SemanticLinkHelper</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\SemanticLinkHelper.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\SemanticLinkHelper.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="cmpct">
+      <HintPath>..\HyperChain\cmpct.dll</HintPath>
+    </Reference>
+    <Reference Include="ExplEntities">
+      <HintPath>..\HyperChain\ExplEntities.dll</HintPath>
+    </Reference>
+    <Reference Include="msgz">
+      <HintPath>..\HyperChain\msgz.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Options.cs" />
+    <Compile Include="SemanticLinkHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\CommonDictService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ExplDictService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\WordFormsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="UserCredentials.cs" />
+    <Compile Include="WordSemanticLink.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\ExplEntities.alphadigit.datasource" />
+    <None Include="Properties\DataSources\ExplEntities.comments.datasource" />
+    <None Include="Properties\DataSources\ExplEntities.elList.datasource" />
+    <None Include="Properties\DataSources\ExplEntities.formula.datasource" />
+    <None Include="Properties\DataSources\ExplEntities.formula_alt.datasource" />
+    <None Include="Properties\DataSources\ExplEntities.frindex.datasource" />
+    <None Include="Properties\DataSources\ExplEntities.HistoryShort.datasource" />
+    <None Include="Properties\DataSources\ExplEntities.illustr_alt.datasource" />
+    <None Include="Properties\DataSources\ExplEntities.nom.datasource" />
+    <None Include="Properties\DataSources\ExplEntities.stop.datasource" />
+    <None Include="Service References\CommonDictService\CommonDic.wsdl" />
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.ADDRESS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.ALLANG.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.DBCONF.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.DEPARTMENT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.GROUP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.GROUPS_RIGHTS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.LS_TYPE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.PERSON.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.POST.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.RIGHT.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.shortUser.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.SYSTEM.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.USERS_GROUPS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.USERS_RANGES1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\SemanticLinkHelper.CommonDictService.USERS_RIGHTS.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CommonDictService\Service.wsdl" />
+    <None Include="Service References\CommonDictService\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonDictService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonDictService\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonDictService\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CommonDictService\Service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExplDictService\ExplDic.wsdl" />
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.alphadigit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.ArticleHistory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.comments.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.elList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.formula.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.formula_alt.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.frindex.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.HistoryShort.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.illustr_alt.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.litsources.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.nom.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.ranges.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.stop.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\SemanticLinkHelper.ExplDictService.verify.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ExplDictService\Service.wsdl" />
+    <None Include="Service References\ExplDictService\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExplDictService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExplDictService\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExplDictService\Service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ExplDictService\Service5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WordFormsService\dictlib.wsdl" />
+    <None Include="Service References\WordFormsService\SemanticLinkHelper.WordFormsService.CommonPartsInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WordFormsService\SemanticLinkHelper.WordFormsService.ListElement.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WordFormsService\SemanticLinkHelper.WordFormsService.morphstr.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WordFormsService\SemanticLinkHelper.WordFormsService.partgramInfo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WordFormsService\SemanticLinkHelper.WordFormsService.phrasdictphraseology.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WordFormsService\SemanticLinkHelper.WordFormsService.typeWord.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WordFormsService\SemanticLinkHelper.WordFormsService.WordUniAndPartAndOmon.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\WordFormsService\Service.wsdl" />
+    <None Include="Service References\WordFormsService\Service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WordFormsService\Service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WordFormsService\Service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WordFormsService\Service3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WordFormsService\Service4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\WordFormsService\Service5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CommonDictService\" />
+    <WCFMetadataStorage Include="Service References\ExplDictService\" />
+    <WCFMetadataStorage Include="Service References\WordFormsService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExplDictService\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExplDictService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExplDictService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ExplDictService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WordFormsService\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WordFormsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WordFormsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\WordFormsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseHelper\DatabaseHelper.csproj">
+      <Project>{D22224CE-D526-468C-A068-2E0F45E7571E}</Project>
+      <Name>DatabaseHelper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CommonDictService\Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CommonDictService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CommonDictService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CommonDictService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

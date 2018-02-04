@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://ulif.org.ua/services/commondic" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ulif.org.ua/services/commondic" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://ulif.org.ua/services/commondic/Imports">
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/ICommonPerCall/Service.svc?xsd=xsd0" namespace="http://ulif.org.ua/services/commondic" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/ICommonPerCall/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/ICommonPerCall/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/VLLStaffDB.Models" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/ICommonPerCall/Service.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://lcorp.ulif.org.ua/ICommonPerCall/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/VLLStaffDB.LnModel" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICommonDic_UpdateDBs_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDBs" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateDBs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDBsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_IsInRole_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsInRole" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_IsInRole_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsInRoleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_LogUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:LogUser" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_LogUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetUserIDsForLS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIDsForLS" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetUserIDsForLS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserIDsForLSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_NewMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:NewMessage" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_NewMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NewMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_CheckMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMessages" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_CheckMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetConfigRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigRights" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetConfigRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetConfigRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetUsersShort_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersShort" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetUsersShort_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUsersShortResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetDBForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDBForUser" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetDBForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDBForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetLSForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLSForUser" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetLSForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLSForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetLangsForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLangsForUser" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetLangsForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLangsForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetRangesForUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRangesForUser" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetRangesForUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRangesForUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetSystemsShort_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemsShort" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetSystemsShort_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemsShortResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroups" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRights" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetPersons_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersons" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetPersons_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPersonsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddresses" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartments" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetPosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPosts" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetPosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetSystems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystems" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetSystems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetDBs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDBs" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetDBs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDBsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetLSs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLSs" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetLSs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLSsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetLangs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetLangs" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetLangs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetLangsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetGroupRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupRights" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetGroupRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetUserRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRights" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetUserRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetUserRanges_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRanges" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetUserRanges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserRangesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetSystemID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemID" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_GetSystemID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSystemIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUser" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteUserPost_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserPost" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteUserPost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteUserPostResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRange" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteSystem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSystem" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteSystem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSystemResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteDepartment_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepartment" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteDepartment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDepartmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeletePost_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePost" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeletePost_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePostResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteRight_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRight" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteRight_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRightResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroup" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteLS_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLS" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteLS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteLSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteDB_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDB" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_DeleteDB_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsers" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateRanges_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRanges" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateRanges_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRangesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateSystems_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSystems" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateSystems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSystemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateUserRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserRights" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateUserRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUserRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateGroupRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGroupRights" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateGroupRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGroupRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateAddresses_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAddresses" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateAddresses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAddressesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateDepartments_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDepartments" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateDepartments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDepartmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdatePosts_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePosts" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdatePosts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePostsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateRights_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRights" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateRights_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRightsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGroups" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateLSs_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLSs" />
+  </wsdl:message>
+  <wsdl:message name="ICommonDic_UpdateLSs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateLSsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICommonDic">
+    <wsdl:operation name="UpdateDBs">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateDBs" message="tns:ICommonDic_UpdateDBs_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateDBsResponse" message="tns:ICommonDic_UpdateDBs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsInRole">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/IsInRole" message="tns:ICommonDic_IsInRole_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/IsInRoleResponse" message="tns:ICommonDic_IsInRole_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LogUser">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/LogUser" message="tns:ICommonDic_LogUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/LogUserResponse" message="tns:ICommonDic_LogUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserIDsForLS">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetUserIDsForLS" message="tns:ICommonDic_GetUserIDsForLS_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetUserIDsForLSResponse" message="tns:ICommonDic_GetUserIDsForLS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NewMessage">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/NewMessage" message="tns:ICommonDic_NewMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/NewMessageResponse" message="tns:ICommonDic_NewMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMessages">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/CheckMessages" message="tns:ICommonDic_CheckMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/CheckMessagesResponse" message="tns:ICommonDic_CheckMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetConfigRights">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetConfigRights" message="tns:ICommonDic_GetConfigRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetConfigRightsResponse" message="tns:ICommonDic_GetConfigRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUsersShort">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetUsersShort" message="tns:ICommonDic_GetUsersShort_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetUsersShortResponse" message="tns:ICommonDic_GetUsersShort_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDBForUser">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetDBForUser" message="tns:ICommonDic_GetDBForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetDBForUserResponse" message="tns:ICommonDic_GetDBForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLSForUser">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetLSForUser" message="tns:ICommonDic_GetLSForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetLSForUserResponse" message="tns:ICommonDic_GetLSForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLangsForUser">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetLangsForUser" message="tns:ICommonDic_GetLangsForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetLangsForUserResponse" message="tns:ICommonDic_GetLangsForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRangesForUser">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetRangesForUser" message="tns:ICommonDic_GetRangesForUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetRangesForUserResponse" message="tns:ICommonDic_GetRangesForUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemsShort">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetSystemsShort" message="tns:ICommonDic_GetSystemsShort_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetSystemsShortResponse" message="tns:ICommonDic_GetSystemsShort_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetGroups" message="tns:ICommonDic_GetGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetGroupsResponse" message="tns:ICommonDic_GetGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRights">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetRights" message="tns:ICommonDic_GetRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetRightsResponse" message="tns:ICommonDic_GetRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPersons">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetPersons" message="tns:ICommonDic_GetPersons_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetPersonsResponse" message="tns:ICommonDic_GetPersons_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAddresses">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetAddresses" message="tns:ICommonDic_GetAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetAddressesResponse" message="tns:ICommonDic_GetAddresses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepartments">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetDepartments" message="tns:ICommonDic_GetDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetDepartmentsResponse" message="tns:ICommonDic_GetDepartments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPosts">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetPosts" message="tns:ICommonDic_GetPosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetPostsResponse" message="tns:ICommonDic_GetPosts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystems">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetSystems" message="tns:ICommonDic_GetSystems_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetSystemsResponse" message="tns:ICommonDic_GetSystems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDBs">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetDBs" message="tns:ICommonDic_GetDBs_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetDBsResponse" message="tns:ICommonDic_GetDBs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLSs">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetLSs" message="tns:ICommonDic_GetLSs_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetLSsResponse" message="tns:ICommonDic_GetLSs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLangs">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetLangs" message="tns:ICommonDic_GetLangs_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetLangsResponse" message="tns:ICommonDic_GetLangs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupRights">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetGroupRights" message="tns:ICommonDic_GetGroupRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetGroupRightsResponse" message="tns:ICommonDic_GetGroupRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRights">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetUserRights" message="tns:ICommonDic_GetUserRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetUserRightsResponse" message="tns:ICommonDic_GetUserRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserRanges">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetUserRanges" message="tns:ICommonDic_GetUserRanges_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetUserRangesResponse" message="tns:ICommonDic_GetUserRanges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSystemID">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetSystemID" message="tns:ICommonDic_GetSystemID_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/GetSystemIDResponse" message="tns:ICommonDic_GetSystemID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUser">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteUser" message="tns:ICommonDic_DeleteUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteUserResponse" message="tns:ICommonDic_DeleteUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteUserPost">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteUserPost" message="tns:ICommonDic_DeleteUserPost_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteUserPostResponse" message="tns:ICommonDic_DeleteUserPost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRange">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteRange" message="tns:ICommonDic_DeleteRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteRangeResponse" message="tns:ICommonDic_DeleteRange_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSystem">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteSystem" message="tns:ICommonDic_DeleteSystem_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteSystemResponse" message="tns:ICommonDic_DeleteSystem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAddress">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteAddress" message="tns:ICommonDic_DeleteAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteAddressResponse" message="tns:ICommonDic_DeleteAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDepartment">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteDepartment" message="tns:ICommonDic_DeleteDepartment_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteDepartmentResponse" message="tns:ICommonDic_DeleteDepartment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePost">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeletePost" message="tns:ICommonDic_DeletePost_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeletePostResponse" message="tns:ICommonDic_DeletePost_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRight">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteRight" message="tns:ICommonDic_DeleteRight_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteRightResponse" message="tns:ICommonDic_DeleteRight_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteGroup" message="tns:ICommonDic_DeleteGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteGroupResponse" message="tns:ICommonDic_DeleteGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteLS">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteLS" message="tns:ICommonDic_DeleteLS_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteLSResponse" message="tns:ICommonDic_DeleteLS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDB">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteDB" message="tns:ICommonDic_DeleteDB_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/DeleteDBResponse" message="tns:ICommonDic_DeleteDB_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUsers">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateUsers" message="tns:ICommonDic_UpdateUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateUsersResponse" message="tns:ICommonDic_UpdateUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRanges">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateRanges" message="tns:ICommonDic_UpdateRanges_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateRangesResponse" message="tns:ICommonDic_UpdateRanges_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSystems">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateSystems" message="tns:ICommonDic_UpdateSystems_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateSystemsResponse" message="tns:ICommonDic_UpdateSystems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserRights">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateUserRights" message="tns:ICommonDic_UpdateUserRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateUserRightsResponse" message="tns:ICommonDic_UpdateUserRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroupRights">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateGroupRights" message="tns:ICommonDic_UpdateGroupRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateGroupRightsResponse" message="tns:ICommonDic_UpdateGroupRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAddresses">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateAddresses" message="tns:ICommonDic_UpdateAddresses_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateAddressesResponse" message="tns:ICommonDic_UpdateAddresses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDepartments">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateDepartments" message="tns:ICommonDic_UpdateDepartments_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateDepartmentsResponse" message="tns:ICommonDic_UpdateDepartments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePosts">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdatePosts" message="tns:ICommonDic_UpdatePosts_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdatePostsResponse" message="tns:ICommonDic_UpdatePosts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRights">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateRights" message="tns:ICommonDic_UpdateRights_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateRightsResponse" message="tns:ICommonDic_UpdateRights_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroups">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateGroups" message="tns:ICommonDic_UpdateGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateGroupsResponse" message="tns:ICommonDic_UpdateGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateLSs">
+      <wsdl:input wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateLSs" message="tns:ICommonDic_UpdateLSs_InputMessage" />
+      <wsdl:output wsaw:Action="http://ulif.org.ua/services/commondic/ICommonDic/UpdateLSsResponse" message="tns:ICommonDic_UpdateLSs_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>
